@@ -1,10 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import './components/InfoBox';
+import InfoBox from './components/InfoBox';
 
 function App() {
   return (
     <div className="App">
-		Test
+		<InfoBox title="First Box"/>
+		<InfoBox title="Second Box"/>
     </div>
   );
 }

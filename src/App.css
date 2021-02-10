@@ -1,6 +1,11 @@
 .App {
-	padding: 20px;
+	padding: 10px 20px;
 	background-color: #282c34;
 	min-height: 100vh;
 	color: white;
+}
+
+p {
+	margin: -10px 0 5px 0;
+	font-size: 20px;
 }

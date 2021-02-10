@@ -7,6 +7,7 @@ function InfoBox(props) {
 			<h1>{props.title}</h1>
 			<p>Info Box</p>
 			<p>Note State: {noteState}</p>
+			<button onClick={() => setNoteState('show')}>Show</button>
 		</div>	
 	);
 }

@@ -1,8 +1,9 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import '../styles/InfoBox.scss';
+import Stars from './Stars';
 
 function InfoBox({ title, highlight }) {
-	const [ noteState, setNoteState ] = useState('hide');
+	const [noteState, setNoteState] = useState('hide');
 
 	const [first, second, third] = ["James", "Axel", "Henri"];
 	console.log(first, second, third);
@@ -19,7 +20,9 @@ function InfoBox({ title, highlight }) {
 				</p>
 			)}
 			<button onClick={() => setNoteState(noteState === 'show' ? 'hide' : 'show')}>Show</button>
-		</div>	
+			<hr />
+			<Stars total={6}/>
+		</div>
 	);
 }
 

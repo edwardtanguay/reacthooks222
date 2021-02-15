@@ -1,0 +1,16 @@
+.component_messageBox {
+    h1 {
+        font-variant: small-caps;
+        color: #aaa;
+    }
+}
+.component_messageBox_framed {
+    border: 1px solid green;
+	width: 300px;
+	padding: 0 10px 10px 15px;
+	margin: 20px 0 0 0;
+	h1 {
+		margin-top: 5px !important;
+		color: green;
+	}
+}

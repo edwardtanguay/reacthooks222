@@ -1,16 +1,20 @@
 import {useState} from 'react';
-import '../styles/InfoBox.css';
+import '../styles/InfoBox.scss';
 
-function InfoBox(props) {
+function InfoBox({ title, highlight }) {
 	const [ noteState, setNoteState ] = useState('hide');
+
+	const [first, second, third] = ["James", "Axel", "Henri"];
+	console.log(first, second, third);
+
 	return (
 		<div className="component_infoBox">
-			<h1>{props.title}</h1>
+			<h1>{title}</h1>
 			<p>Info Box</p>
 			<p>Note State: {noteState}</p>
-			<p>Highlight: {props.highlight} </p>
+			<p>Highlight: {highlight} </p>
 			{ noteState === 'show' && (
-				<p className={props.highlight === "true" ? "highlight" : "normal"} >
+				<p className={highlight === "true" ? "highlight" : "normal"} >
 					This is the note
 				</p>
 			)}

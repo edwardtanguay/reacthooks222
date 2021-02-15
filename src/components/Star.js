@@ -1,8 +1,8 @@
 import { FaStar } from 'react-icons/fa';
 
-function Star() {
+function Star({ selected = false }) {
 	return (
-		<FaStar color="yellow" />
+		<FaStar color={selected ? 'yellow' : '#888'} />
 	)
 }
 

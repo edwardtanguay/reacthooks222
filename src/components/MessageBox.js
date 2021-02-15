@@ -15,7 +15,7 @@ function MessageBox({ framed }) {
 			<p>
 				<button onClick={() => setBackground(background ? false : true)}>Background</button>
 			</p>
-			<p><input type="checkbox" checked={checked ? 'checked' : ''} onChange={() => setChecked(!checked)}/>Checked: {checked ? 'checked' : 'unchecked'}</p>
+			<p><input type="checkbox" checked={checked ? 'checked' : ''} onChange={() => setChecked(!checked)} />Checked: {checked ? 'checked' : 'unchecked'}</p>
 		</div>
 	)
 }

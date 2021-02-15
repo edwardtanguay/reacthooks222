@@ -10,6 +10,7 @@ function App() {
 		<InfoBox title="Second Box" highlight="false"/>
 		<InfoBox title="Third Box" highlight="true"/>
 		<MessageBox framed="true"></MessageBox>
+		<MessageBox framed="true"></MessageBox>
     </div>
   );
 }

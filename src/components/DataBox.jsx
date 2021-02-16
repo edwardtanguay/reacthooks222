@@ -18,12 +18,12 @@ function DataBox() {
 			<div className="component_dataBox">
 				<h1>DataBox</h1>
 				<p>Data source: <a href={apiUrl}>{apiUrl}</a></p>
+				<button onClick={() => setData(removeUser(data))}>Delete one user</button>
 				<ul>
 					{data.map((user) => (
 						<li key={user.id}>{user.login}</li>
 					))}
 				</ul>
-				<button onClick={() => setData(removeUser(data))}>Delete one user</button>
 			</div>
 		)
 	}

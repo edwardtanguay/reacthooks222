@@ -7,14 +7,12 @@ function ReducerBox() {
 	return (
 		<div className="component_reducerBox" >
 			<h1>Reducer Box</h1>
-			<p>Current count: {count}</p>
+			<p>Current count: {count} <button onClick={() => setCount(increment)}>Increment</button></p>
 			<div>
-				<button onClick={() => setCount(increment)}>Increment</button>
-			</div>
-			<div>
-				<input type="text" value={increment} />
+				<input type="text" defaultValue={increment}/>
 				<button onClick={() => setIncrement(increment + 1)}>Set increment</button>
 			</div>
+				
 		</div>
 	);
 }

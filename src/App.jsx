@@ -5,10 +5,13 @@ import MessageBox from './components/MessageBox';
 import NoteBox from './components/NoteBox';
 import DataBox from './components/DataBox';
 import ReducerBox from './components/ReducerBox';
+import ToggleBox from './components/ToggleBox';
 
 function App() {
   return (
     <div className="App">
+		<ToggleBox></ToggleBox>
+		<hr/>
 		<ReducerBox></ReducerBox>
 		<hr/>
 		<NoteBox></NoteBox>

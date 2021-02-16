@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import '../styles/DataBox.scss';
 
+function removeUser(data) {
+	return data.slice(0, -1);
+}
+
 function DataBox() {
 	const apiUrl = 'https://api.github.com/users';
 	const [data, setData] = useState([]);
@@ -19,6 +23,7 @@ function DataBox() {
 						<li key={user.id}>{user.login}</li>
 					))}
 				</ul>
+				<button onClick={() => setData(removeUser(data))}>Delete one user</button>
 			</div>
 		)
 	}

@@ -12,6 +12,7 @@ function NoteBox() {
 	}, [admin]);
 	return (
 		<div>
+			<h1>NoteBox</h1>
 			<p>Contratulations, {name}.</p>
 			<p><button onClick={() => setName('Alex')}>Change winner</button></p>	
 			<p>(Note with UseEffect, the document title also changes.)</p>

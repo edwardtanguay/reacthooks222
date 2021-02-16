@@ -5,13 +5,20 @@ const createArray = (length) => [...Array(length)];
 
 function Stars({ total }) {
 	const [selectedStars, setSelectedStars] = useState(0);
-	return createArray(total).map((n, index) => (
-		<Star
-			key={index}
-			selected= {selectedStars > index}
-			onSelect={() => setSelectedStars(index + 1)}
-		/>
-	));
+	return (
+		<>
+			{
+				createArray(total).map((n, index) => (
+					<Star
+						key={index}
+						selected={selectedStars > index}
+						onSelect={() => setSelectedStars(index + 1)}
+					/>
+				))
+			}
+			<div>{selectedStars} of {total}</div>
+		</>
+	);
 
 }
 

@@ -6,10 +6,13 @@ import NoteBox from './components/NoteBox';
 import DataBox from './components/DataBox';
 import ReducerBox from './components/ReducerBox';
 import ToggleBox from './components/ToggleBox';
+import DispatchBox from './components/DispatchBox';
 
 function App() {
   return (
     <div className="App">
+		<DispatchBox message="Sent from App.jsx"></DispatchBox>
+		<hr/>
 		<ToggleBox></ToggleBox>
 		<hr/>
 		<ReducerBox></ReducerBox>

@@ -11,10 +11,13 @@ import DispatchBox from './components/DispatchBox';
 import UseRefBox from './components/UseRefBox';
 import CustomHookBox from './components/CustomHookBox';
 import BooksBox from './components/BooksBox';
+import HookFetchBox from './components/HookFetchBox';
 
 function App() {
 	return (
 		<div className="App">
+			<HookFetchBox></HookFetchBox>
+			<hr/>
 			<BooksBox></BooksBox>
 			<hr/>
 			<CustomHookBox></CustomHookBox>

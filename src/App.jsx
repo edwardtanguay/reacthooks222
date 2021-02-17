@@ -7,10 +7,13 @@ import DataBox from './components/DataBox';
 import ReducerBox from './components/ReducerBox';
 import ToggleBox from './components/ToggleBox';
 import DispatchBox from './components/DispatchBox';
+import UseRefBox from './components/UseRefBox';
 
 function App() {
   return (
     <div className="App">
+		<UseRefBox></UseRefBox>
+		<hr/>
 		<DispatchBox message="Sent from App.jsx"></DispatchBox>
 		<hr/>
 		<ToggleBox></ToggleBox>

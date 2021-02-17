@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useFetch} from '../hooks/useFetch';
+import { useFetch } from '../hooks/useFetch';
 import '../styles/HookFetchBox.scss';
 import moment from 'moment';
 
@@ -8,12 +8,12 @@ const formatDate = (dateString) => {
 	return d.format('MMMM do, YYYY');
 }
 
-const lookup = () => {
-	console.log('in lookup');
-};
 
 function HookFetchBox() {
 	const login = useRef();
+	const lookup = () => {
+		console.log('in lookup, login is: ' + login.current.value);
+	};
 	const { loading, data, error } = useFetch('https://api.github.com/users/edwardtanguay');
 	if (loading) return (
 		<div>Loading...</div>
@@ -26,7 +26,7 @@ function HookFetchBox() {
 			<h1>Hook Fetch Box</h1>
 			<form>
 				<label htmlFor="login">GitHub Login: </label>
-				<input type="text" ref={login} /> 
+				<input type="text" ref={login} />
 				<button type="button" onClick={() => lookup()}>Lookup</button>
 			</form>
 			<div className="container">

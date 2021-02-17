@@ -1,9 +1,10 @@
-import React, { createContext } from 'react';
+import React, { createContext, useContext } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-export const BooksContext = createContext();
+const BooksContext = createContext();
+export const useBooks = () => useContext(BooksContext);
 
 const books = [
 	{
@@ -20,12 +21,17 @@ const books = [
 		id: 3,
 		title: 'Homo Deus',
 		author: 'Yuval Harari'
+	},
+	{
+		id: 4,
+		title: 'Der Ego-Tunnel',
+		author: 'Thomas Metzinger'
 	}
 ];
 
 ReactDOM.render(
 	<React.StrictMode>
-		<BooksContext.Provider value={{books}}>
+		<BooksContext.Provider value={{ books }}>
 			<App />
 		</BooksContext.Provider>
 	</React.StrictMode>,

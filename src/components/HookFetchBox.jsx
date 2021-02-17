@@ -8,13 +8,15 @@ const formatDate = (dateString) => {
 	return d.format('MMMM do, YYYY');
 }
 
-
+// TODO: fix this so that the form works to look up data
 function HookFetchBox() {
 	const login = useRef();
 	const lookup = () => {
 		console.log('in lookup, login is: ' + login.current.value);
 	};
-	const { loading, data, error } = useFetch('https://api.github.com/users/edwardtanguay');
+	login.current.value = 'edwardtanguay';
+	const { loading, data, error } = useFetch(`https://api.github.com/users/${login.current.value}`);
+	// const { loading, data, error } = useFetch('https://api.github.com/users/edwardtanguay');
 	if (loading) return (
 		<div>Loading...</div>
 	);

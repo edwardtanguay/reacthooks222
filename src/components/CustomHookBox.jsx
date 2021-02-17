@@ -5,7 +5,7 @@ import { useInput } from '../hooks/useInput';
 function CustomHookBox() {
 	const [elements, setElements] = useState([]);
 	const [nameProps, resetName] = useInput('');
-	const [colorProps, resetColor] = useInput('#888888');
+	const [colorProps, resetColor] = useInput('#ff0000');
 
 	const submit = () => {
 		setElements([...elements,

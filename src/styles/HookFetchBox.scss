@@ -1,5 +1,19 @@
 .component_hookFetchBox {
-	img.avatar {
-		width: 150px;
+    img.avatar {
+        width: 150px;
+    }
+    div.container {
+        display: flex;
+        column-gap: 1em;
+    }
+	div.dataArea p {
+		font-size: 1em;
+		margin-top: 4px;
+		a {
+			color: #aaa !important;
+		}
+	}
+	form {
+		padding: 20px 0;
 	}
 }

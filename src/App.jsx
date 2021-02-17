@@ -8,10 +8,13 @@ import ReducerBox from './components/ReducerBox';
 import ToggleBox from './components/ToggleBox';
 import DispatchBox from './components/DispatchBox';
 import UseRefBox from './components/UseRefBox';
+import CustomHookBox from './components/CustomHookBox';
 
 function App() {
   return (
     <div className="App">
+		<CustomHookBox></CustomHookBox>
+		<hr/>
 		<UseRefBox></UseRefBox>
 		<hr/>
 		<DispatchBox message="Sent from App.jsx"></DispatchBox>

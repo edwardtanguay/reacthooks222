@@ -1,0 +1,26 @@
+.component_CustomHookBox {
+	margin-bottom: 20px;
+	h1 {
+		margin-bottom: 10px;
+	}
+	h2 {
+		font-size: 1.3em;
+		font-weight: normal;
+		margin-bottom: 10px;
+		color: #bbb;
+		font-style: italic;
+	}
+	input, img, button {
+		vertical-align: middle;
+	}
+	form {
+		div {
+			margin-bottom: 5px;
+		}
+		label {
+			margin-right: 3px;
+			min-width: 70px;
+			display: inline-block;
+		}
+	}
+}

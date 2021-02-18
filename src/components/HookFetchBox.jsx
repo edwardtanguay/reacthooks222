@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import '../styles/HookFetchBox.scss';
 import moment from 'moment';

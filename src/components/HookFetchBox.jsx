@@ -17,7 +17,7 @@ function HookFetchBox({login = 'edwardtanguay'}) {
 	)
 	return (
 		<div className="component_hookFetchBox">
-			<h1>Hook Fetch Example</h1>
+			<h1>Custom Fetch Hook Example</h1>
 			<div className="container">
 				<div className="imageArea"><img className="avatar" src={data.avatar_url} alt="avatar" /></div>
 				<div className="dataArea">

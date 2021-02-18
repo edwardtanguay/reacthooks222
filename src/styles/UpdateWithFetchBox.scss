@@ -1,6 +1,7 @@
 $high: yellow;
 $medium: orange;
-$low: #ccc;
+$low: #eee;
+$veryLow: #999;
 
 .component_updateWithFetchBox {
     margin: 0 0 20px 0;
@@ -30,6 +31,12 @@ $low: #ccc;
         color: $low;
         a {
             color: $low;
+        }
+    }
+    li.veryLow {
+        color: $veryLow;
+        a {
+            color: $veryLow;
         }
     }
 }

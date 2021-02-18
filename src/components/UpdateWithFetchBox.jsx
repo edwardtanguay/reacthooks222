@@ -18,7 +18,7 @@ function UpdateWithFetchBox() {
 						date: date,
 						title: rawHit.title,
 						url: rawHit.url,
-						rank: date.startsWith('2021') ? 'high' : date.startsWith('2020') ? 'medium' : 'low'
+						rank: date.startsWith('2021') ? 'high' : date.startsWith('2020') ? 'medium' : date.startsWith('2019') ? 'low' : 'veryLow'
 					});
 				}
 			});

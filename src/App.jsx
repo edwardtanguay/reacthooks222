@@ -12,14 +12,19 @@ import UseRefBox from './components/UseRefBox';
 import CustomHookBox from './components/CustomHookBox';
 import BooksBox from './components/BooksBox';
 import HookFetchBox from './components/HookFetchBox';
+import UpdateWithFetchBox from './components/UpdateWithFetchBox';
 
 function App() {
 	return (
 		<div className="App">
-			<HookFetchBox></HookFetchBox>
-			<hr/>
+			<UpdateWithFetchBox></UpdateWithFetchBox>
+			<hr />
+			<HookFetchBox login="rwightman"></HookFetchBox>
+			<HookFetchBox login="edwardtanguay"></HookFetchBox>
+			<HookFetchBox login="mitsuhiko"></HookFetchBox>
+			<hr />
 			<BooksBox></BooksBox>
-			<hr/>
+			<hr />
 			<CustomHookBox></CustomHookBox>
 			<hr />
 			<UseRefBox></UseRefBox>

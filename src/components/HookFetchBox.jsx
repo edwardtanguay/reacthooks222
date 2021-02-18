@@ -9,14 +9,17 @@ const formatDate = (dateString) => {
 }
 
 // TODO: fix this so that the form works to look up data
-function HookFetchBox() {
-	const login = useRef();
-	const lookup = () => {
-		console.log('in lookup, login is: ' + login.current.value);
-	};
-	login.current.value = 'edwardtanguay';
-	const { loading, data, error } = useFetch(`https://api.github.com/users/${login.current.value}`);
+function HookFetchBox({login = 'edwardtanguay'}) {
+	// const login = useRef();
+	// const lookup = () => {
+	// 	console.log('in lookup, login is: ' + login.current.value);
+	// };
+	// login.current.value = 'edwardtanguay';
+	// const { loading, data, error } = useFetch(`https://api.github.com/users/${login.current.value}`);
+
+	const { loading, data, error } = useFetch(`https://api.github.com/users/${login}`);
 	// const { loading, data, error } = useFetch('https://api.github.com/users/edwardtanguay');
+
 	if (loading) return (
 		<div>Loading...</div>
 	);
@@ -26,11 +29,11 @@ function HookFetchBox() {
 	return (
 		<div className="component_hookFetchBox">
 			<h1>Hook Fetch Box</h1>
-			<form>
+			{/* <form>
 				<label htmlFor="login">GitHub Login: </label>
 				<input type="text" ref={login} />
 				<button type="button" onClick={() => lookup()}>Lookup</button>
-			</form>
+			</form> */}
 			<div className="container">
 				<div className="imageArea"><img className="avatar" src={data.avatar_url} alt="avatar" /></div>
 				<div className="dataArea">

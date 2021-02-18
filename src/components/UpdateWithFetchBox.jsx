@@ -41,12 +41,13 @@ function UpdateWithFetchBox() {
 
 	return (
 		<div className="component_updateWithFetchBox">
-			<h1>Update with Fetch Box</h1>
+			<h1>API Search with Fetch Example</h1>
 			<p>
 				<input type="text" ref={newQuery} />&nbsp;<button type="button" onClick={() => setQuery(newQuery.current.value)}>Search</button>
 			</p>
-			<div>{status}</div>
-			<FaSpinner className="spinner" />
+			{status === 'fetching' && (
+				<div className="spinnerArea"><FaSpinner className="spinner" /></div>
+			)}
 			<ul>
 				{hits.map((hit, index) => (
 					<li className={hit.rank} key={index}>{hit.date}: <a href={hit.url}>{hit.title}</a></li>

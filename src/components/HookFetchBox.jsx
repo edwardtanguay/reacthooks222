@@ -27,7 +27,7 @@ function HookFetchBox({login = 'edwardtanguay'}) {
 	)
 	return (
 		<div className="component_hookFetchBox">
-			<h1>Hook Fetch Box</h1>
+			<h1>Hook Fetch Example</h1>
 			{/* <form>
 				<label htmlFor="login">GitHub Login: </label>
 				<input type="text" ref={login} />

@@ -9,3 +9,12 @@ p {
 	margin: -10px 0 5px 0;
 	font-size: 20px;
 }
+
+a {
+	color: yellow;
+}
+
+.notice {
+	font-family: 'Courier New', Courier, monospace;
+	color: #bbb;
+}

@@ -17,6 +17,8 @@ import UpdateWithFetchBox from './components/UpdateWithFetchBox';
 function App() {
 	return (
 		<div className="App">
+			<div className="notice">The code for this website is available at <a href="https://github.com/edwardtanguay/reacthooks222">https://github.com/edwardtanguay/reacthooks222</a> </div>
+			<hr />
 			<UpdateWithFetchBox></UpdateWithFetchBox>
 			<hr />
 			<HookFetchBox login="rwightman"></HookFetchBox>

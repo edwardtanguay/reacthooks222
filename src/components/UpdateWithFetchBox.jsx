@@ -4,31 +4,31 @@ import '../styles/UpdateWithFetchBox.scss';
 function UpdateWithFetchBox() {
 	const newQuery = useRef();
 	const [query, setQuery] = useState('');
-	const [cleanHits, setCleanHits] = useState([]);
+	const [hits, setHits] = useState([]);
 
 	useEffect(() => {
 		if (!query) return;
 
-		const convertHitsToCleanHits = (hits) => {
-			let newCleanHits = [];
-			hits.forEach(hit => {
-				if (hit.title) {
-					newCleanHits.push({
-						date: hit.created_at.substring(0, 10),
-						title: hit.title,
-						url: hit.url
+		const convertHitsTohits = (rawHits) => {
+			let newhits = [];
+			rawHits.forEach(rawHit => {
+				if (rawHit.title) {
+					newhits.push({
+						date: rawHit.created_at.substring(0, 10),
+						title: rawHit.title,
+						url: rawHit.url
 					});
 				}
 			});
-			newCleanHits.sort((a, b) => (a.date < b.date) ? 1 : -1);
-			setCleanHits(newCleanHits);
+			newhits.sort((a, b) => (a.date < b.date) ? 1 : -1);
+			setHits(newhits);
 		};
 		const fetchData = async () => {
 			const response = await fetch(
 				`https://hn.algolia.com/api/v1/search?query=${query}`
 			);
 			const data = await response.json();
-			convertHitsToCleanHits(data.hits);
+			convertHitsTohits(data.hits);
 		};
 		fetchData();
 	}, [query]);
@@ -36,13 +36,12 @@ function UpdateWithFetchBox() {
 	return (
 		<div className="component_updateWithFetchBox">
 			<h1>Update with Fetch Box</h1>
-			<p>Query is currently: {query}</p>
 			<p>
-				Search: <input type="text" ref={newQuery} /><button type="button" onClick={() => setQuery(newQuery.current.value)}>Update</button>
+				<input type="text" ref={newQuery} />&nbsp;<button type="button" onClick={() => setQuery(newQuery.current.value)}>Search</button>
 			</p>
 			<ul>
-				{cleanHits.map((cleanHit, index) => (
-					<li key={index}>{cleanHit.date}: <a href={cleanHit.url}>{cleanHit.title}</a></li>
+				{hits.map((hit, index) => (
+					<li key={index}>{hit.date}: <a href={hit.url}>{hit.title}</a></li>
 				))}
 			</ul>
 		</div>

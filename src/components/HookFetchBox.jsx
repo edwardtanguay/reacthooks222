@@ -7,18 +7,8 @@ const formatDate = (dateString) => {
 	return d.format('MMMM do, YYYY');
 }
 
-// TODO: fix this so that the form works to look up data
 function HookFetchBox({login = 'edwardtanguay'}) {
-	// const login = useRef();
-	// const lookup = () => {
-	// 	console.log('in lookup, login is: ' + login.current.value);
-	// };
-	// login.current.value = 'edwardtanguay';
-	// const { loading, data, error } = useFetch(`https://api.github.com/users/${login.current.value}`);
-
 	const { loading, data, error } = useFetch(`https://api.github.com/users/${login}`);
-	// const { loading, data, error } = useFetch('https://api.github.com/users/edwardtanguay');
-
 	if (loading) return (
 		<div>Loading...</div>
 	);
@@ -28,11 +18,6 @@ function HookFetchBox({login = 'edwardtanguay'}) {
 	return (
 		<div className="component_hookFetchBox">
 			<h1>Hook Fetch Example</h1>
-			{/* <form>
-				<label htmlFor="login">GitHub Login: </label>
-				<input type="text" ref={login} />
-				<button type="button" onClick={() => lookup()}>Lookup</button>
-			</form> */}
 			<div className="container">
 				<div className="imageArea"><img className="avatar" src={data.avatar_url} alt="avatar" /></div>
 				<div className="dataArea">
@@ -43,7 +28,6 @@ function HookFetchBox({login = 'edwardtanguay'}) {
 					<div><p>Account Created: {formatDate(data.created_at)}</p></div>
 				</div>
 			</div>
-			{/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
 		</div>
 	)
 }

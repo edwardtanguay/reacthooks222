@@ -18,10 +18,10 @@ function App() {
 	return (
 		<div className="App">
 			<UpdateWithFetchBox></UpdateWithFetchBox>
-			<hr />
+			{/* <hr />
 			<HookFetchBox login="rwightman"></HookFetchBox>
 			<HookFetchBox login="edwardtanguay"></HookFetchBox>
-			<HookFetchBox login="mitsuhiko"></HookFetchBox>
+			<HookFetchBox login="mitsuhiko"></HookFetchBox> */}
 			<hr />
 			<BooksBox></BooksBox>
 			<hr />
@@ -36,8 +36,8 @@ function App() {
 			<ReducerBox></ReducerBox>
 			<hr />
 			<NoteBox></NoteBox>
-			<hr />
-			<DataBox></DataBox>
+			{/* <hr />
+			<DataBox></DataBox> */}
 			<hr />
 			<InfoBox title="First Box" />
 			<InfoBox title="Second Box" highlight="false" />

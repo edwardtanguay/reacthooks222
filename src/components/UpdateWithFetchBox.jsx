@@ -4,13 +4,12 @@ import '../styles/UpdateWithFetchBox.scss';
 function UpdateWithFetchBox() {
 	const newQuery = useRef();
 	const [query, setQuery] = useState('');
-	const [hits, setHits] = useState([]);
 	const [cleanHits, setCleanHits] = useState([]);
 
 	useEffect(() => {
 		if (!query) return;
 
-		const convertHitsToCleanHits = () => {
+		const convertHitsToCleanHits = (hits) => {
 			let newCleanHits = [];
 			hits.forEach(hit => {
 				if (hit.title) {
@@ -21,7 +20,7 @@ function UpdateWithFetchBox() {
 					});
 				}
 			});
-			newCleanHits = newCleanHits.sort((a, b) => a.date - b.date);
+			newCleanHits.sort((a, b) => (a.date < b.date) ? 1 : -1);
 			setCleanHits(newCleanHits);
 		};
 		const fetchData = async () => {
@@ -29,11 +28,10 @@ function UpdateWithFetchBox() {
 				`https://hn.algolia.com/api/v1/search?query=${query}`
 			);
 			const data = await response.json();
-			setHits(data.hits);
-			convertHitsToCleanHits();
+			convertHitsToCleanHits(data.hits);
 		};
 		fetchData();
-	}, [query, hits]);
+	}, [query]);
 
 	return (
 		<div className="component_updateWithFetchBox">

@@ -13,10 +13,12 @@ function UpdateWithFetchBox() {
 			let newhits = [];
 			rawHits.forEach(rawHit => {
 				if (rawHit.title) {
+					const date = rawHit.created_at.substring(0, 10);
 					newhits.push({
-						date: rawHit.created_at.substring(0, 10),
+						date: date,
 						title: rawHit.title,
-						url: rawHit.url
+						url: rawHit.url,
+						rank: date.startsWith('2021') ? 'high' : date.startsWith('2020') ? 'medium' : 'low'
 					});
 				}
 			});
@@ -41,7 +43,7 @@ function UpdateWithFetchBox() {
 			</p>
 			<ul>
 				{hits.map((hit, index) => (
-					<li key={index}>{hit.date}: <a href={hit.url}>{hit.title}</a></li>
+					<li className={hit.rank} key={index}>{hit.date}: <a href={hit.url}>{hit.title}</a></li>
 				))}
 			</ul>
 		</div>

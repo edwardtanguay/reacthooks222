@@ -1,10 +1,35 @@
+$high: yellow;
+$medium: orange;
+$low: #ccc;
+
 .component_updateWithFetchBox {
-	margin: 0 0 20px 0;
-	p {
-		padding: 0;
-		margin: 0 0 0 0;
+    margin: 0 0 20px 0;
+    p {
+        padding: 0;
+        margin: 0 0 0 0;
+    }
+    a {
+        text-decoration: none;
+    }
+	a:hover {
+		text-decoration: underline;
 	}
-	a {
-		color: ivory;
-	}
+    li.high {
+        color: $high;
+        a {
+            color: $high;
+        }
+    }
+    li.medium {
+        color: $medium;
+        a {
+            color: $medium;
+        }
+    }
+    li.low {
+        color: $low;
+        a {
+            color: $low;
+        }
+    }
 }

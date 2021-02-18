@@ -18,10 +18,10 @@ function App() {
 	return (
 		<div className="App">
 			<UpdateWithFetchBox></UpdateWithFetchBox>
-			{/* <hr />
+			<hr />
 			<HookFetchBox login="rwightman"></HookFetchBox>
 			<HookFetchBox login="edwardtanguay"></HookFetchBox>
-			<HookFetchBox login="mitsuhiko"></HookFetchBox> */}
+			<HookFetchBox login="mitsuhiko"></HookFetchBox>
 			<hr />
 			<BooksBox></BooksBox>
 			<hr />

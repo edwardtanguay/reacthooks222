@@ -38,8 +38,8 @@ function App() {
 			<ReducerBox></ReducerBox>
 			<hr />
 			<NoteBox></NoteBox>
-			{/* <hr />
-			<DataBox></DataBox> */}
+			<hr />
+			<DataBox></DataBox>
 			<hr />
 			<InfoBox title="First Box" />
 			<InfoBox title="Second Box" highlight="false" />

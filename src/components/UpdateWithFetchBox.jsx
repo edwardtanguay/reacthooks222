@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import '../styles/UpdateWithFetchBox.scss';
+import { FaSpinner } from 'react-icons/fa';
 
 function UpdateWithFetchBox() {
 	const newQuery = useRef();
 	const [query, setQuery] = useState('');
 	const [hits, setHits] = useState([]);
+	const [status, setStatus] = useState('idle');
 
 	useEffect(() => {
 		if (!query) return;
@@ -26,11 +28,13 @@ function UpdateWithFetchBox() {
 			setHits(newhits);
 		};
 		const fetchData = async () => {
+			setStatus('fetching');
 			const response = await fetch(
 				`https://hn.algolia.com/api/v1/search?query=${query}`
 			);
 			const data = await response.json();
 			convertHitsTohits(data.hits);
+			setStatus('fetched');
 		};
 		fetchData();
 	}, [query]);
@@ -41,6 +45,8 @@ function UpdateWithFetchBox() {
 			<p>
 				<input type="text" ref={newQuery} />&nbsp;<button type="button" onClick={() => setQuery(newQuery.current.value)}>Search</button>
 			</p>
+			<div>{status}</div>
+			<FaSpinner className="spinner" />
 			<ul>
 				{hits.map((hit, index) => (
 					<li className={hit.rank} key={index}>{hit.date}: <a href={hit.url}>{hit.title}</a></li>
